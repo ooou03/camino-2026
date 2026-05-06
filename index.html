@@ -3,289 +3,363 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vivian's Camino Portugués 2026</title>
+    <title>朝聖之路：葡萄牙海岸線備忘錄</title>
     <style>
-        :root {
-            --primary-color: #2c5f2d; /* 森林綠 */
-            --secondary-color: #97bc62; /* 嫩葉綠 */
-            --accent-color: #fce38a; /* 扇貝黃 */
-            --bg-color: #f9f9f9;
-            --text-color: #333;
-        }
-
         body {
-            font-family: "Microsoft JhengHei", "PingFang TC", sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
-
         header {
-            background-color: var(--primary-color);
+            background-color: #004b87; /* 朝聖藍 */
             color: white;
-            padding: 2rem 1rem;
             text-align: center;
-            border-bottom: 5px solid var(--accent-color);
+            padding: 20px 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
-
+        header h1 {
+            margin: 0;
+            font-size: 22px;
+            color: #FFD700; /* 朝聖黃 */
+        }
+        header p {
+            margin: 5px 0 0 0;
+            font-size: 14px;
+            opacity: 0.9;
+        }
         .container {
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 0 15px;
+            padding: 15px;
+            max-width: 600px;
+            margin: 0 auto;
         }
-
-        h2 {
-            color: var(--primary-color);
-            border-left: 5px solid var(--secondary-color);
-            padding-left: 10px;
-            margin-top: 2rem;
-        }
-
-        .todo-section {
-            background: #fff;
-            border: 1px solid #ddd;
-            padding: 1rem;
+        details {
+            background: white;
+            margin-bottom: 15px;
             border-radius: 8px;
-            margin-bottom: 20px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+            overflow: hidden;
+            border-left: 5px solid #004b87;
         }
-
-        .todo-item {
+        summary {
+            padding: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        summary::-webkit-details-marker {
+            display: none;
+        }
+        summary:hover {
+            background-color: #f0f4f8;
+        }
+        .date-day {
+            color: #666;
+            font-size: 0.85em;
+            margin-bottom: 4px;
+            font-weight: 600;
+        }
+        .route-title {
+            font-size: 1.1em;
+            color: #004b87;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .mileage {
+            background-color: #FFD700;
+            color: #333;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+        }
+        .details-content {
+            padding: 15px;
+            border-top: 1px solid #eee;
+            background-color: #fafbfc;
+        }
+        .section-title {
+            font-size: 0.95em;
+            color: #b30000;
+            margin: 15px 0 5px 0;
+            font-weight: bold;
             display: flex;
             align-items: center;
-            margin-bottom: 8px;
         }
-
-        .todo-item input {
-            margin-right: 10px;
+        .section-title:first-child {
+            margin-top: 0;
         }
-
-        /* 響應式表格 */
-        .table-container {
-            overflow-x: auto;
+        .content-text {
+            font-size: 0.9em;
+            margin: 0 0 10px 0;
+            white-space: pre-wrap;
         }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-            margin-bottom: 1rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        th, td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #eee;
-        }
-
-        th {
-            background-color: var(--secondary-color);
-            color: white;
-            white-space: nowrap;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-
-        .dist-cell { font-weight: bold; color: #d9534f; }
-        .highlight { color: #2c5f2d; font-weight: bold; }
-
-        @media (max-width: 600px) {
-            th, td {
-                font-size: 14px;
-                padding: 8px;
-            }
-            header h1 { font-size: 1.5rem; }
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            color: #777;
-            font-size: 0.9rem;
-        }
-
-        .status-tag {
-            display: inline-block;
-            padding: 2px 8px;
+        .alert-box {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 10px;
+            margin-top: 10px;
             border-radius: 4px;
-            font-size: 12px;
-            background: #eee;
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Vivian's Camino Portugués 2026</h1>
-    <p>葡萄牙海岸線朝聖之旅：波多 ➔ 聖地牙哥</p>
+    <h1>Buen Camino! 🐚</h1>
+    <p>葡萄牙海岸線朝聖之旅備忘錄</p>
 </header>
 
 <div class="container">
-    
-    <div class="todo-section">
-        <h2>📌 核心待辦清單 (Checklist)</h2>
-        <div class="todo-item"><input type="checkbox"> 里斯本 ➔ 波多交通票</div>
-        <div class="todo-item"><input type="checkbox"> 5/24 船票預訂 (V. de Arousa ➔ Padrón)</div>
-        <div class="todo-item"><input type="checkbox"> 聖地牙哥 ➔ 馬德里高鐵票</div>
-        <div class="todo-item"><input type="checkbox"> 2026.01 預訂 A Armenteira 住宿</div>
-        <div class="todo-item"><input type="checkbox"> 買波多朝聖者護照 (Credencial)</div>
-    </div>
 
-    <h2>✈️ 第一階段：啟程與觀光</h2>
-    <div class="table-container">
-        <table>
-            <thead>
-                <tr>
-                    <th>日期</th>
-                    <th>行程</th>
-                    <th>住宿</th>
-                    <th>備註</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>5/6 (三)</td>
-                    <td>台北 ➔ 里斯本 (AUH轉機)</td>
-                    <td>機上</td>
-                    <td>19:25 起飛</td>
-                </tr>
-                <tr>
-                    <td>5/7 (四)</td>
-                    <td>里斯本市區</td>
-                    <td>Yes! Lisbon Hostel</td>
-                    <td>07:25 抵達</td>
-                </tr>
-                <tr>
-                    <td>5/8 (五)</td>
-                    <td>辛特拉近郊 (佩納宮/雷加萊拉宮)</td>
-                    <td>Yes! Lisbon Hostel</td>
-                    <td>查434/435巴士時刻</td>
-                </tr>
-                <tr>
-                    <td>5/9 (六)</td>
-                    <td>里斯本 ➔ 波多</td>
-                    <td>Porto (待訂)</td>
-                    <td><span class="highlight">必買朝聖護照</span></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+    <details>
+        <summary>
+            <div class="date-day">出發準備</div>
+            <div class="route-title">Lisboa ➔ Porto <span class="mileage">火車/公車</span></div>
+        </summary>
+        <div class="details-content">
+            <div class="section-title">⚠️ 注意點</div>
+            <div class="alert-box content-text">1-先買波多主教座堂i處購買朝聖護照。
+2-在葡萄牙打招呼用語是 Bom Caminho，到西班牙時要改成 Buen Camino！兩者皆有打招呼和祝福一路順風/平安的意思。</div>
+        </div>
+    </details>
 
-    <h2>🥾 第二階段：朝聖之路 (Camino)</h2>
-    <div class="table-container">
-        <table>
-            <thead>
-                <tr>
-                    <th>Day</th>
-                    <th>起訖點</th>
-                    <th>距離</th>
-                    <th>住宿建議</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>D1 (5/11)</td>
-                    <td>波多 ➔ Labruge</td>
-                    <td class="dist-cell">27km</td>
-                    <td>Albergue S. Tiago (15€)</td>
-                </tr>
-                <tr>
-                    <td>D2 (5/12)</td>
-                    <td>Labruge ➔ Póvoa de Varzim</td>
-                    <td class="dist-cell">19km</td>
-                    <td>Hostel S. José (10€)</td>
-                </tr>
-                <tr>
-                    <td>D3 (5/13)</td>
-                    <td>Póvoa ➔ Marinhas</td>
-                    <td class="dist-cell">26km</td>
-                    <td>Hostel Costa Selvagem</td>
-                </tr>
-                <tr>
-                    <td>D4 (5/14)</td>
-                    <td>Marinhas ➔ Viana do Castelo</td>
-                    <td class="dist-cell">24km</td>
-                    <td>Hostel S. João da Cruz</td>
-                </tr>
-                <tr>
-                    <td>D5 (5/15)</td>
-                    <td>Viana ➔ Caminha</td>
-                    <td class="dist-cell">23.6km</td>
-                    <td>Albergue de Caminha</td>
-                </tr>
-                <tr>
-                    <td>D7 (5/17)</td>
-                    <td>V.N. de Cerveira ➔ Tui</td>
-                    <td class="dist-cell">16.8km</td>
-                    <td>Tui 公立庇護所 (進入西班牙)</td>
-                </tr>
-                <tr>
-                    <td>D11 (5/21)</td>
-                    <td>蓬特韋德拉 (Pontevedra)</td>
-                    <td class="dist-cell">休息</td>
-                    <td>無車城一日遊</td>
-                </tr>
-                <tr>
-                    <td>D12 (5/22)</td>
-                    <td>Pontevedra ➔ A Armenteira</td>
-                    <td class="dist-cell">23km</td>
-                    <td><span class="highlight">進入性靈之路</span></td>
-                </tr>
-                <tr>
-                    <td>D14 (5/24)</td>
-                    <td>V. de Arousa ➔ Padrón</td>
-                    <td class="dist-cell">35km</td>
-                    <td>需搭船 (30€)</td>
-                </tr>
-                <tr>
-                    <td>D15 (5/25)</td>
-                    <td>Padrón ➔ Santiago</td>
-                    <td class="dist-cell">24.4km</td>
-                    <td>Albergue SCQ (抵達終點!)</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+    <details>
+        <summary>
+            <div class="date-day">Day 1</div>
+            <div class="route-title">波多 ➔ Labruge <span class="mileage">27 km</span></div>
+        </summary>
+        <div class="details-content">
+            <div class="section-title">🚶‍♂️ 路線細節</div>
+            <p class="content-text">Gronze：Costa Etapa 1
+Porto → Foz do Douro福茲杜羅河 → Matosinhos → Leça da Palmeira → Aldeia Nova (Perafita) → Praia de Angeiras (Lavra) → Praia de Labruge海灘 → Labruge</p>
+            <div class="section-title">⚠️ 注意點</div>
+            <div class="alert-box content-text">從波多證交所處下切到杜羅河畔，沿河畔前行。出海口接著沿大西洋海岸沙灘邊道路走12公里。貝殼和黃箭頭標記密集明顯，在一高架橋處，轉彎處有黃箭頭指引，走上天橋穿越河岸後，繼續遵循黃箭頭左轉，約3.5公里後見大西洋沙灘。
+注意：部分木棧道有塌陷或腐化空洞，請小心行走。經過小漁村後直抵庇護所。</div>
+        </div>
+    </details>
 
-    <h2>🐚 第三階段：世界盡頭與回程</h2>
-    <div class="table-container">
-        <table>
-            <thead>
-                <tr>
-                    <th>日期</th>
-                    <th>行程</th>
-                    <th>備註</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>5/26 (二)</td>
-                    <td>Finisterre & Muxia 一日遊</td>
-                    <td>找中文導覽或預約巴士</td>
-                </tr>
-                <tr>
-                    <td>5/27 (三)</td>
-                    <td>聖地牙哥 ➔ 馬德里</td>
-                    <td>搭乘高鐵</td>
-                </tr>
-                <tr>
-                    <td>5/28 (四)</td>
-                    <td>馬德里 ➔ 台北</td>
-                    <td>10:35 起飛</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+    <details>
+        <summary>
+            <div class="date-day">Day 2</div>
+            <div class="route-title">Labruge ➔ 波瓦迪瓦爾津 <span class="mileage">19 km</span></div>
+        </summary>
+        <div class="details-content">
+            <div class="section-title">🚶‍♂️ 路線細節</div>
+            <p class="content-text">Gronze：Costa Etapa 2
+Labruge → Praia de Labruge → Vila Chã → Louçá-Mindelo → Vila do Conde → Caxinas(可不經) → Póvoa de Varzim</p>
+            <div class="section-title">⚠️ 注意點</div>
+            <div class="alert-box content-text">從前一天的大西洋海灘岸走就接上路徑。
+注意：沙丘木棧步道部份被沙掩蓋及破損不堪，襪子鞋子容易進沙，需特別注意步伐。
+穿過Ave河橋樑後抵達 Póvoa de Varzim。這裡有三間不同風格餐廳營業。黃箭頭和貝殼明顯。</div>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div class="date-day">Day 3</div>
+            <div class="route-title">波瓦迪瓦爾津 ➔ Marinhas <span class="mileage">26 km</span></div>
+        </summary>
+        <div class="details-content">
+            <div class="section-title">🚶‍♂️ 路線細節</div>
+            <p class="content-text">Gronze：Costa Etapa 3
+Póvoa de Varzim → A Ver-o-Mar → Aguçadoura → Apúlia → Fão → Esposende → Marinhas</p>
+            <div class="section-title">⚠️ 注意點</div>
+            <div class="alert-box content-text">從沿海開始，然後稍微轉向內陸，朝向 Fão 及其橫跨 Cádavo 河的橋樑。
+路況包含：長廊、木棧道、土路，最後五公里是鵝卵石和柏油人行道。標記明顯。</div>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div class="date-day">Day 4</div>
+            <div class="route-title">Marinhas ➔ 維亞納城堡 <span class="mileage">24 km</span></div>
+        </summary>
+        <div class="details-content">
+            <div class="section-title">🚶‍♂️ 路線細節</div>
+            <p class="content-text">Etapa 4: Marinhas - Viana do Castelo
+Marinhas → Mar → Belinho → Antas → Castelo do Neiva → Chafé → Anha → Darque → Viana do Castelo</p>
+            <div class="section-title">⚠️ 注意點</div>
+            <div class="alert-box content-text">暫時離開海岸進入内陸，經過村鎮住宅，教堂右轉進入上下坡林蔭步道。
+通往 Neiva 河床是由二塊大石板鋪成的小橋，此段約5公里。一連串下坡通過 Ponte Eiffel 橋後，下橋左轉直走抵達教堂旁。</div>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div class="date-day">Day 5</div>
+            <div class="route-title">維亞納城堡 ➔ Caminha <span class="mileage">23.65 km</span></div>
+        </summary>
+        <div class="details-content">
+            <div class="section-title">🚶‍♂️ 路線細節</div>
+            <p class="content-text">Etapa 5: Viana do Castelo - Caminha
+Viana do Castelo → Areosa → Carreço(建議往下走沿莫萊多海灘向前，較美，增1.1km) → Afife → Vila Praia de Âncora → Moledo → Caminha</p>
+            <div class="section-title">⚠️ 注意點</div>
+            <div class="alert-box content-text">官方箭頭不明顯。若沿海岸線走，部分路徑需繞回公路（車多危險）。如果想持續走海岸線，請依賴地圖找路，但可能會因此多走冤枉路（曾有紀錄走到30公里，需重新找路）。抵達 Vila Praia de Âncora 後可順利步行至 Caminha。</div>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div class="date-day">Day 6</div>
+            <div class="route-title">Caminha ➔ 維拉·諾瓦·德·塞爾韋拉 <span class="mileage">15.2 km</span></div>
+        </summary>
+        <div class="details-content">
+            <div class="section-title">🚶‍♂️ 路線細節</div>
+            <p class="content-text">Etapa 6E 前半段
+Caminha → Seixas → Lanhelas(利用人家樓梯穿過果園。陡峭土石路穿過樹林，繞道穿隧道跨越A-28公路) → Gouvim → Gondarém → Loivo → Vila Nova de Cerveira</p>
+            <div class="section-title">⚠️ 注意點</div>
+            <div class="alert-box content-text">推薦 D. Lima 餐廳 (Rúa 25 de Abril)，傳統且價格實惠，份量足 (週一休息)。Lanhelas 附近需爬樓梯穿果園及陡峭土石路，注意體力分配。</div>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div class="date-day">Day 7</div>
+            <div class="route-title">維拉·諾瓦·德·塞爾韋拉 ➔ Tui <span class="mileage">16.8 km</span></div>
+        </summary>
+        <div class="details-content">
+            <div class="section-title">🚶‍♂️ 路線細節</div>
+            <p class="content-text">Etapa 6E 後半段
+Vila Nova de Cerveira → Lovelhe → Reboreda → Campos → Vila Meã → São Pedro da Torre → Cristelo Covo → Valença → Tui</p>
+            <div class="section-title">⚠️ 注意點</div>
+            <div class="alert-box content-text">今日將跨越國界進入西班牙 (Valença 跨橋至 Tui)，記得調整時差（西班牙比葡萄牙快一小時），打招呼改成 Buen Camino！</div>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div class="date-day">Day 8</div>
+            <div class="route-title">Tui ➔ O Porriño <span class="mileage">16.1 km</span></div>
+        </summary>
+        <div class="details-content">
+            <div class="section-title">🚶‍♂️ 路線細節</div>
+            <p class="content-text">Etapa 21 前半段
+Tui → Ribadelouro → O Porriño</p>
+            <div class="section-title">⚠️ 注意點</div>
+            <div class="alert-box content-text">從 Ribadelouro 途經阿斯甘達拉斯 (As Gándaras) 自然保護區，沿著盧羅河 (Louro River) 行進，請保持河流在你的右側。</div>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div class="date-day">Day 9</div>
+            <div class="route-title">O Porriño ➔ Redondela <span class="mileage">15.8 km</span></div>
+        </summary>
+        <div class="details-content">
+            <div class="section-title">🚶‍♂️ 路線細節</div>
+            <p class="content-text">Etapa 21 後半段
+O Porriño → Ameiro Longo → Veigadaña → Rúa (Mos) (有爬坡) → Capilla de Santiaguiño → Padrón (Saxamonde) → Redondela</p>
+            <div class="section-title">⚠️ 注意點</div>
+            <div class="alert-box content-text">經過 Mos 區域時會有爬坡路段，請預留體力。</div>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div class="date-day">Day 10</div>
+            <div class="route-title">Redondela ➔ 蓬特韋德拉 <span class="mileage">21 km</span></div>
+        </summary>
+        <div class="details-content">
+            <div class="section-title">🚶‍♂️ 路線細節</div>
+            <p class="content-text">Etapa 22
+Redondela → Cesantes → Soutoxuste → Arcade → Pontesampaio → Pontevedra</p>
+            <div class="section-title">⚠️ 注意點</div>
+            <div class="alert-box content-text">有兩次分別為 120米和 135米不平整漸進的爬坡，開始時微陡。
+走過橫跨河道二岸的古羅馬橋，進入林蔭步道後直抵城鎮(位於古城1.5公里入口處)。此城為哥倫布聖瑪利亞號建造地，充滿歷史。</div>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div class="date-day">Day 11</div>
+            <div class="route-title">Pontevedra 蓬特韋德拉 <span class="mileage">休息/觀光</span></div>
+        </summary>
+        <div class="details-content">
+            <div class="section-title">🚶‍♂️ 路線細節</div>
+            <p class="content-text">無車城一日遊</p>
+            <div class="section-title">⚠️ 注意點</div>
+            <div class="alert-box content-text">歷史古蹟推薦：Plaza de Peregrina/聖女教堂、Iglesia de San Francisco聖弗朗西斯科教堂、真正的聖母瑪利亞大教堂、德克羅廣場。好好享受這個無車城市的悠閒。</div>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div class="date-day">Day 12</div>
+            <div class="route-title">Pontevedra ➔ A Armenteira <span class="mileage">23 km</span></div>
+        </summary>
+        <div class="details-content">
+            <div class="section-title">🚶‍♂️ 路線細節</div>
+            <p class="content-text">Etapa 1E: Pontevedra - A Armenteira (Spiritual Variant 性靈之路)
+(D11-3-走E1天橋後的第2叉路往左) → O Freixo → Parada → Cabaleiro → Fragamoreira → Muíño → O Convento → A Seara → A Seca → Casalvito → Combarro → Xuviño → O Esperón → A Armenteira</p>
+            <div class="section-title">⚠️ 注意點</div>
+            <div class="alert-box content-text">今天轉進性靈之路路線！路徑是「公路-海岸-森林」串連循環。
+途中經過 poio、Combarro 兩個村落。葡萄園會變多，海拔爬升至270公尺處有平台可俯瞰河岸景觀。
+*本日路徑務必核對 Gronze Etapa 1E 資訊。*</div>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div class="date-day">Day 13</div>
+            <div class="route-title">A Armenteira ➔ 比拉諾瓦德亞羅薩 <span class="mileage">23 km</span></div>
+        </summary>
+        <div class="details-content">
+            <div class="section-title">🚶‍♂️ 路線細節</div>
+            <p class="content-text">Etapa 2E: A Armenteira - Vilanova de Arousa
+A Armenteira → A Barcia → A Torre → Barrantes → Cabanelas → Ponte Arnelas → Gombra → Mouzos → A Igrexa → Cores → San Roque do Monte → O Terrón → Vilanova de Arousa</p>
+            <div class="section-title">⚠️ 注意點</div>
+            <div class="alert-box content-text">1- 狹窄山徑下切到河岸一座石頭屋旁走右岸，很像淡蘭古道。下切到平地後出現寬闊河，沿蜿蜒河岸走。走過橋抵達城鎮。
+2- 天候警告：A Armenteira 若下雨溼滑，一定要改走自行車道，沿河走會很危險！</div>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div class="date-day">Day 14</div>
+            <div class="route-title">比拉諾瓦德亞羅薩 ➔ Padrón <span class="mileage">35 km (搭船)</span></div>
+        </summary>
+        <div class="details-content">
+            <div class="section-title">🚶‍♂️ 路線細節</div>
+            <p class="content-text">Etapa 3E: Vilanova de Arousa - Padrón
+Vilanova de Arousa (坐船) → Pontecesures → Padrón</p>
+            <div class="section-title">⚠️ 注意點</div>
+            <div class="alert-box content-text">坐船抵達 Pontecesures。28公里約1小時航程，船費30歐。
+參考 Gronze：從維拉諾瓦德阿羅薩搭船前往蓬特塞蘇雷斯。</div>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div class="date-day">Day 15</div>
+            <div class="route-title">Padrón ➔ 聖地牙哥 (Santiago) <span class="mileage">24.4 km</span></div>
+        </summary>
+        <div class="details-content">
+            <div class="section-title">🚶‍♂️ 路線細節</div>
+            <p class="content-text">Etapa 25: Padrón - Santiago de Compostela
+Padrón → Iria Flavia → Pazos de Iria → A Escravitude → Cruces → Angueira de Suso → Areal → Picaraña → O Faramello → Rúa de Francos → Pedreira → Raíces → O Milladoiro → Santiago de Compostela</p>
+            <div class="section-title">⚠️ 注意點</div>
+            <div class="alert-box content-text">終點站！準備迎接大教堂廣場的感動。記得去領取星象圖證書 (Compostela)。</div>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div class="date-day">延伸行程</div>
+            <div class="route-title">世界盡頭一日遊 <span class="mileage">Finisterre / Muxia</span></div>
+        </summary>
+        <div class="details-content">
+            <div class="section-title">⚠️ 注意點</div>
+            <div class="alert-box content-text">需要先預定行程。Iglesia de San Pedro 教堂 Muros 不要進去。</div>
+        </div>
+    </details>
 
 </div>
-
-<footer>
-    <p>Bom Caminho, Vivian! ☀️</p>
-</footer>
 
 </body>
 </html>
