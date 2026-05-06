@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vivian's Camino Portugués 2026</title>
+    <style>
+        :root {
+            --primary-color: #2c5f2d; /* 森林綠 */
+            --secondary-color: #97bc62; /* 嫩葉綠 */
+            --accent-color: #fce38a; /* 扇貝黃 */
+            --bg-color: #f9f9f9;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: "Microsoft JhengHei", "PingFang TC", sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            border-bottom: 5px solid var(--accent-color);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-left: 5px solid var(--secondary-color);
+            padding-left: 10px;
+            margin-top: 2rem;
+        }
+
+        .todo-section {
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .todo-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .todo-item input {
+            margin-right: 10px;
+        }
+
+        /* 響應式表格 */
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background-color: var(--secondary-color);
+            color: white;
+            white-space: nowrap;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .dist-cell { font-weight: bold; color: #d9534f; }
+        .highlight { color: #2c5f2d; font-weight: bold; }
+
+        @media (max-width: 600px) {
+            th, td {
+                font-size: 14px;
+                padding: 8px;
+            }
+            header h1 { font-size: 1.5rem; }
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        .status-tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            background: #eee;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Vivian's Camino Portugués 2026</h1>
+    <p>葡萄牙海岸線朝聖之旅：波多 ➔ 聖地牙哥</p>
+</header>
+
+<div class="container">
+    
+    <div class="todo-section">
+        <h2>📌 核心待辦清單 (Checklist)</h2>
+        <div class="todo-item"><input type="checkbox"> 里斯本 ➔ 波多交通票</div>
+        <div class="todo-item"><input type="checkbox"> 5/24 船票預訂 (V. de Arousa ➔ Padrón)</div>
+        <div class="todo-item"><input type="checkbox"> 聖地牙哥 ➔ 馬德里高鐵票</div>
+        <div class="todo-item"><input type="checkbox"> 2026.01 預訂 A Armenteira 住宿</div>
+        <div class="todo-item"><input type="checkbox"> 買波多朝聖者護照 (Credencial)</div>
+    </div>
+
+    <h2>✈️ 第一階段：啟程與觀光</h2>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>日期</th>
+                    <th>行程</th>
+                    <th>住宿</th>
+                    <th>備註</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>5/6 (三)</td>
+                    <td>台北 ➔ 里斯本 (AUH轉機)</td>
+                    <td>機上</td>
+                    <td>19:25 起飛</td>
+                </tr>
+                <tr>
+                    <td>5/7 (四)</td>
+                    <td>里斯本市區</td>
+                    <td>Yes! Lisbon Hostel</td>
+                    <td>07:25 抵達</td>
+                </tr>
+                <tr>
+                    <td>5/8 (五)</td>
+                    <td>辛特拉近郊 (佩納宮/雷加萊拉宮)</td>
+                    <td>Yes! Lisbon Hostel</td>
+                    <td>查434/435巴士時刻</td>
+                </tr>
+                <tr>
+                    <td>5/9 (六)</td>
+                    <td>里斯本 ➔ 波多</td>
+                    <td>Porto (待訂)</td>
+                    <td><span class="highlight">必買朝聖護照</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2>🥾 第二階段：朝聖之路 (Camino)</h2>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Day</th>
+                    <th>起訖點</th>
+                    <th>距離</th>
+                    <th>住宿建議</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>D1 (5/11)</td>
+                    <td>波多 ➔ Labruge</td>
+                    <td class="dist-cell">27km</td>
+                    <td>Albergue S. Tiago (15€)</td>
+                </tr>
+                <tr>
+                    <td>D2 (5/12)</td>
+                    <td>Labruge ➔ Póvoa de Varzim</td>
+                    <td class="dist-cell">19km</td>
+                    <td>Hostel S. José (10€)</td>
+                </tr>
+                <tr>
+                    <td>D3 (5/13)</td>
+                    <td>Póvoa ➔ Marinhas</td>
+                    <td class="dist-cell">26km</td>
+                    <td>Hostel Costa Selvagem</td>
+                </tr>
+                <tr>
+                    <td>D4 (5/14)</td>
+                    <td>Marinhas ➔ Viana do Castelo</td>
+                    <td class="dist-cell">24km</td>
+                    <td>Hostel S. João da Cruz</td>
+                </tr>
+                <tr>
+                    <td>D5 (5/15)</td>
+                    <td>Viana ➔ Caminha</td>
+                    <td class="dist-cell">23.6km</td>
+                    <td>Albergue de Caminha</td>
+                </tr>
+                <tr>
+                    <td>D7 (5/17)</td>
+                    <td>V.N. de Cerveira ➔ Tui</td>
+                    <td class="dist-cell">16.8km</td>
+                    <td>Tui 公立庇護所 (進入西班牙)</td>
+                </tr>
+                <tr>
+                    <td>D11 (5/21)</td>
+                    <td>蓬特韋德拉 (Pontevedra)</td>
+                    <td class="dist-cell">休息</td>
+                    <td>無車城一日遊</td>
+                </tr>
+                <tr>
+                    <td>D12 (5/22)</td>
+                    <td>Pontevedra ➔ A Armenteira</td>
+                    <td class="dist-cell">23km</td>
+                    <td><span class="highlight">進入性靈之路</span></td>
+                </tr>
+                <tr>
+                    <td>D14 (5/24)</td>
+                    <td>V. de Arousa ➔ Padrón</td>
+                    <td class="dist-cell">35km</td>
+                    <td>需搭船 (30€)</td>
+                </tr>
+                <tr>
+                    <td>D15 (5/25)</td>
+                    <td>Padrón ➔ Santiago</td>
+                    <td class="dist-cell">24.4km</td>
+                    <td>Albergue SCQ (抵達終點!)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2>🐚 第三階段：世界盡頭與回程</h2>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>日期</th>
+                    <th>行程</th>
+                    <th>備註</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>5/26 (二)</td>
+                    <td>Finisterre & Muxia 一日遊</td>
+                    <td>找中文導覽或預約巴士</td>
+                </tr>
+                <tr>
+                    <td>5/27 (三)</td>
+                    <td>聖地牙哥 ➔ 馬德里</td>
+                    <td>搭乘高鐵</td>
+                </tr>
+                <tr>
+                    <td>5/28 (四)</td>
+                    <td>馬德里 ➔ 台北</td>
+                    <td>10:35 起飛</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<footer>
+    <p>Bom Caminho, Vivian! ☀️</p>
+</footer>
+
+</body>
+</html>
